@@ -17,6 +17,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 - [Binary Tree](#binary-tree)
 - [Binary Search Tree](#binary-search-tree)
 - [Trie](#trie)
+- [Fenwick Tree](#fenwick-tree)
 - [Heap](#heap)
 - [Hash Table](#hash-table)
 - [Graph](#graph)
@@ -58,7 +59,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 | Append | `N/A`        | `O(1)`        |
 | Delete | `N/A`        | `O(n)`        |
 
-## Linked List
+# Linked List
 
 - Linked list is a sequential list of nodes that hold data which point to other nodes also containing data.
 - **Singly-linked list**: linked list in which each node points to the next node and the last node points to null.
@@ -89,7 +90,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 | Singly Linked | `Uses less memory, Simpler implementation` | `Cannot easily access previous elements` |
 | Doubly Linked | `Can be traversed backwards`               | `Takes 2x memory`                        |
 
-## Stack
+# Stack
 
 ![Alt text](/img/stack.png?raw=true "Stack")
 
@@ -107,7 +108,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
   - Used behind the scenes to support recursion by keeping track of previous function calls.
   - Can be used to do Depth First Search (DFS) on a graph.
 
-## Queue
+# Queue
 
 ![Alt text](/img/queue.png?raw=true "Queue")
 
@@ -124,7 +125,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
   - Web server request management where you want first come first serve.
   - Breadth first search (BFS) graph traversal.
 
-## Priority Queue
+# Priority Queue
 
 - Priority queue is an **Abstract Data Type (ADT)** that operates similar to normal queue except that **each element has a certain priority**. The priority of the elements in the priority queue determine the order in which elements are removed from the PQ.
 - Priority queues only support **comparable data**, meaning data inserted into PQ must be able to be ordered from least to greatest or vice versa.
@@ -140,7 +141,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
   - Peeking: `O(1)`
   - Adding: `O(log(n))`
 
-## Tree
+# Tree
 
 ![Alt text](/img/tree.png?raw=true "Tree")
 
@@ -155,7 +156,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 - **Perfect Tree**: a tree in which all interior nodes have two children and all leaves have the same depth. (tree is completely filled up).
 - **Balanced Tree**: a tree that roughly maintains `O(logN)` time complexity if we traverse and picking 1 subtree at a time.
 
-## Binary Tree
+# Binary Tree
 
 ![Alt text](/img/binary-tree.png?raw=true "Binary Tree")
 
@@ -170,7 +171,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
   - Syntax trees (used by compiler and calculators).
   - Treap - a probabilistic DS (uses a randomized BST).
 
-## Binary Search Tree
+# Binary Search Tree
 
 ![Alt text](/img/bst.png?raw=true "Binary Search Tree")
 
@@ -183,7 +184,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 
 \* In the worst case, time complexity for all operations is `O(n)`. i.e: when the generated tree appears to be a line.
 
-### Tree Traversals:
+## Tree Traversals:
 
 ![Alt text](/img/tree-traversals.png?raw=true "Tree Traversals")
 
@@ -192,9 +193,22 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 - **postorder**: left subtree -> right subtree -> root
 - **level order**: print the nodes as they appear one layer at a time. (Do a BFS from the root node down to the leaf nodes).
 
-## Trie
+# Trie
 
-## Heap
+![Alt text](/img/trie.png?raw=true "Trie")
+
+- A trie, sometimes called radix or prefix tree, is a search tree that is used to store a dynamic set or associative array where the keys are usually strings.
+
+# Fenwick Tree
+
+- Fenwick tree, also called a binary indexed tree, is a data structure that supports sum range queries as well as setting values in a static array and getting the value of the prefix sum up some index efficiently.
+- Time Complexity:
+  - Construction: `O(n)`
+  - Point Update: `O(log(n))`
+  - Range Sum: `O(log(n))`
+  - Range Update: `O(log(n))`
+
+# Heap
 
 ![Alt text](/img/heap.png?raw=true "Heap")
 
@@ -202,8 +216,12 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 - Simply put, a heap can be classified as either a **max heap** or a **min heap**.
   - In a **max heap**, parent nodes are always greater than or equal to the children nodes.
   - In a **min heap**, parent nodes are always smaller than or equal to the children nodes.
+- Time Complexity:
+  - Access: `O(1)`
+  - Insert: `O(log(n))`
+  - Remove: `O(log(n))`
 
-## Hash Table
+# Hash Table
 
 ![Alt text](/img/hash-table.png?raw=true "Hash Table")
 
@@ -230,15 +248,15 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
   - Remove: `O(1)`
   - Search: `O(1)`
 
-## Graph
+# Graph
 
-## Algorithms
+# Algorithms
 
-## Bitmasks
+# Bitmasks
 
-## Runtime Analysis
+# Runtime Analysis
 
-## References
+# References
 
 - [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://www.youtube.com/watch?v=RBSGKlAvoiM)
 - [MIT Introduction to Algorithms](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=1)
