@@ -216,10 +216,19 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
     - A hash function `H(x)` must be **deterministic**. This means that if H(x) = y then H(x) must **always** produce y and never another value.
     - A **hash collision** is when two objects x, y hash to the same value. (`H(x) = H(y)`)
 - Collision Solusions:
+
   - **Separate Chaining**: deals with hash collisions by maintaining a data structure (usually a linked list) to hold all the different values which hashed to a particular value.
-    ![Alt text](/img/separate-chaining.png?raw=true "Separate Chaining")
+
+  ![Alt text](/img/separate-chaining.png?raw=true "Separate Chaining")
+
   - **Open Addressing**: deals with hash collisions by finding another place within the hash table for the object to go by offsetting it from the original position which it hashed to.
-    ![Alt text](/img/open-addressing.png?raw=true "Open Addressing")
+
+  ![Alt text](/img/open-addressing.png?raw=true "Open Addressing")
+
+- Time Complexity:
+  - Insert: `O(1)`
+  - Remove: `O(1)`
+  - Search: `O(1)`
 
 ## Graph
 
@@ -232,3 +241,4 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 ## References
 
 - [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://www.youtube.com/watch?v=RBSGKlAvoiM)
+- [MIT Introduction to Algorithms](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=1)
