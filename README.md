@@ -18,11 +18,12 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 - [Binary Search Tree](#binary-search-tree)
 - [Trie](#trie)
 - [Heap](#heap)
-- [Hashing](#hashing)
+- [Hash Table](#hash-table)
 - [Graph](#graph)
 - [Algorithms](#algorithms)
 - [Bitmasks](#bitmasks)
 - [Runtime Analysis](#runtime-analysis)
+- [References](#references)
 
 # Array
 
@@ -125,24 +126,100 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 
 ## Priority Queue
 
-- Priority queue is an Abstract Data Type (ADT) that operates similar to normal queue except that **each element has a certain priority**. The priority of the elements in the priority queue determine the order in which elements are removed from the PQ.
+- Priority queue is an **Abstract Data Type (ADT)** that operates similar to normal queue except that **each element has a certain priority**. The priority of the elements in the priority queue determine the order in which elements are removed from the PQ.
 - Priority queues only support **comparable data**, meaning data inserted into PQ must be able to be ordered from least to greatest or vice versa.
+- When are where is PQ used?
+  - Used in certain implementations of Dijkstra's Shortest Path algorithm.
+  - To dynamically fetch the 'next best' or 'next worst' element.
+  - Used in Huffman coding (lossless data compression).
+  - A\* search algorithm uses PQs to continuously grab the next most promising node.
+  - Used in Minimum Spanning Tree (MST) algorithms.
+- Time Complexity:
+  - Bineary Heap Construction: `O(n)`
+  - Polling: `O(log(n))`
+  - Peeking: `O(1)`
+  - Adding: `O(log(n))`
 
 ## Tree
 
-- A tree is an undirected, connected, acyclic graph.
+![Alt text](/img/tree.png?raw=true "Tree")
+
+- A tree is an undirected, connected, acyclic (no cycles) graph.
+- Unlike Array and Linked List, which are linear data structures, tree is hierarchical (or non-linear) data structure.
+- Each node in a tree can only have 1 parent.
+- Terminology:
+  - **Leaf node**: node with no children.
+  - **Subtree**: a tree entirely contained within another tree.
+- **Full Tree**: a tree in which every node has either 0 or k-children.
+- **Complete Tree**: a tree that every level of the tree is filled up except the final level which may or may not be filled up and if the final level has nodes, they should be filled up from left to right.
+- **Perfect Tree**: a tree in which all interior nodes have two children and all leaves have the same depth. (tree is completely filled up).
+- **Balanced Tree**: a tree that roughly maintains `O(logN)` time complexity if we traverse and picking 1 subtree at a time.
 
 ## Binary Tree
 
+![Alt text](/img/binary-tree.png?raw=true "Binary Tree")
+
+- A binary tree is a tree data structure in which each node has at most two children.
+- When are where are Binary Trees used?
+  - Binary Search Trees (BSTs)
+    - Some `Map` and `Set` implementations.
+    - Red Black Trees
+    - AVL Trees
+    - etc...
+  - Binary heaps implementation.
+  - Syntax trees (used by compiler and calculators).
+  - Treap - a probabilistic DS (uses a randomized BST).
+
 ## Binary Search Tree
+
+![Alt text](/img/bst.png?raw=true "Binary Search Tree")
+
+- A binary search tree (BST) is a binary tree that satisfies the BST invariant: left subtree has smaller elements and right subtree has larger elements.
+- Time Complexity:
+  - Access: `O(log(n))`
+  - Search: `O(log(n))`
+  - Insert: `O(log(n))`
+  - Remove: `O(log(n))`
+
+\* In the worst case, time complexity for all operations is `O(n)`. i.e: when the generated tree appears to be a line.
+
+### Tree Traversals:
+
+![Alt text](/img/tree-traversals.png?raw=true "Tree Traversals")
+
+- **preorder**: root -> left subtree -> right
+- **inorder**: left subtree -> root -> right subtree
+- **postorder**: left subtree -> right subtree -> root
+- **level order**: print the nodes as they appear one layer at a time. (Do a BFS from the root node down to the leaf nodes).
 
 ## Trie
 
 ## Heap
 
-- A heap is a tree based data structure that satisfies the **heap invariant** (also called heap property): If A is a parent node of B then A is ordered with respect to B for all nodes A, B in the heap.
+![Alt text](/img/heap.png?raw=true "Heap")
 
-## Hashing
+- A heap is a tree based data structure that satisfies the **heap invariant** (also called heap property): If A is a parent node of B then A is ordered with respect to B for all nodes A, B in the heap.
+- Simply put, a heap can be classified as either a **max heap** or a **min heap**.
+  - In a **max heap**, parent nodes are always greater than or equal to the children nodes.
+  - In a **min heap**, parent nodes are always smaller than or equal to the children nodes.
+
+## Hash Table
+
+![Alt text](/img/hash-table.png?raw=true "Hash Table")
+
+- A **Hash Table (HT)** is a DS that provides a mapping from keys to values refer to as `key-value pairs` using a technique called **hashing**.
+- Keys must be **unique** but values can be repeated.
+- HTs are often used to track item frequencies. i.e.: counting the number of times a word appears in a given text.
+- **Hash function** `H(x)`: is a function that maps a key `x` to a whole number in a fixed range.
+  - Properties of Hash functions:
+    - If `H(x) = H(y)`, then x and y might be equal, but if `H(x) != H(y)`, then x and y are `certainly not equal`
+    - A hash function `H(x)` must be **deterministic**. This means that if H(x) = y then H(x) must **always** produce y and never another value.
+    - A **hash collision** is when two objects x, y hash to the same value. (`H(x) = H(y)`)
+- Collision Solusions:
+  - **Separate Chaining**: deals with hash collisions by maintaining a data structure (usually a linked list) to hold all the different values which hashed to a particular value.
+    ![Alt text](/img/separate-chaining.png?raw=true "Separate Chaining")
+  - **Open Addressing**: deals with hash collisions by finding another place within the hash table for the object to go by offsetting it from the original position which it hashed to.
+    ![Alt text](/img/open-addressing.png?raw=true "Open Addressing")
 
 ## Graph
 
@@ -151,3 +228,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 ## Bitmasks
 
 ## Runtime Analysis
+
+## References
+
+- [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://www.youtube.com/watch?v=RBSGKlAvoiM)
