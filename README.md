@@ -21,9 +21,8 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 - [Heap](#heap)
 - [Hash Table](#hash-table)
 - [Graph](#graph)
-- [Algorithms](#algorithms)
-- [Bitmasks](#bitmasks)
-- [Runtime Analysis](#runtime-analysis)
+- [Sorting Algorithms](#sorting-algorithms)
+- [Graph Algorithms](#graph-algorithms)
 - [References](#references)
 
 # Array
@@ -250,13 +249,126 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Data_structure)
 
 # Graph
 
-# Algorithms
+- A graph is a non-linear data structure consisting of a set of vertices (or nodes) and set of edges which connect a pair of nodes.
+  ![Alt text](/img/graph.png?raw=true "Graph")
+- **Undirected Graph**: a graph in which the adjacency relation is symmetric.
+- **Directed Graph**: a graph in which the adjacency relation is not symmetric.
 
-# Bitmasks
+# Sorting Algorithms
 
-# Runtime Analysis
+## Sorting Algorithms Cheat Sheet
+
+![Alt text](/img/sorting-complexity.png?raw=true "Sorting Algorithms Complexity")
+
+## Quicksort
+
+![Alt text](/img/quicksort.gif "Quicksort")
+
+- Divide and conquer algorithm.
+- Picks an element as pivot and partitions the given array around the picked pivot such that elements on the left half are smaller than pivot and elements on the right are greater than pivot.
+- Different ways of picking pivot:
+  - Pick first element.
+  - Pick last element.
+  - Pick random element.
+  - Pick median as pivot.
+
+## Heap Sort
+
+![Alt text](/img/heapsort.gif "Heapsort")
+
+- Heap sort is a comparison based sorting technique based on Binary Heap data structure. It is similar to selection sort where we first find the maximum element and place the maximum element at the end. We repeat the same process for the remaining elements.
+
+## Insertion Sort
+
+![Alt text](/img/insertion-sort.gif "Insertion Sort")
+
+- Insertion sort is a simple sorting algorithm that is relatively efficient for small lists and mostly sorted lists, and is often used as part of more sophisticated algorithms.
+- It works by taking elements from the list one by one and inserting them in their correct position into a new sorted list
+
+## Merge Sort
+
+![Alt text](/img/merge-sort.gif "Merge Sort")
+
+- Mergesort is a divide and conquer algorithm. It continuously divides an array into two halves, recurses on both the left subarray and right subarray and then merges the two sorted halves.
+
+## Selection Sort
+
+![Alt text](/img/selection-sort.gif "Selection Sort")
+
+- Selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.
+
+1. The subarray which is already sorted.
+2. Remaining subarray which is unsorted.
+
+- In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.
+
+## Bucket Sort
+
+![Alt text](/img/bucket-sort.gif "Bucket Sort")
+
+- Bucket Sort is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm.
+
+## Radix Sort
+
+- Radix Sort is a sorting algorithm that like bucket sort, distributes elements of an array into a number of buckets. However, radix sort differs from bucket sort by 're-bucketing' the array after the initial pass as opposed to sorting each bucket and merging.
+
+# Graph Algorithms
+
+## Depth First Search (DFS)
+
+![Alt text](/img/dfs.gif "Depth First Search")
+
+- Depth First Search is a graph traversal algorithm which explores as far as possible along each branch before backtracking
+- Time Complexity: `O(|V| + |E|)`
+
+## Breadth First Search (BFS)
+
+![Alt text](/img/bfs.gif "Breadth First Search")
+
+- Breadth First Search is a graph traversal algorithm which explores the neighbor nodes first, before moving to the next level neighbors.
+- Time Complexity: `O(|V| + |E|)`
+
+## Dijkstra's Algorithm
+
+![Alt text](/img/dijkstra.gif "Dijkstra's Algorithm")
+
+- Dijkstra's Algorithm is an algorithm for finding the shortest path from **one** node to all nodes. Doesn't allow negative weight edges.
+- Time Complexity: `O(V^2)`
+
+## Bellman-Ford Algorithm
+
+![Alt text](/img/bellman-ford.gif "Bellman-Ford Algorithm")
+
+- Bellman-Ford Algorithm is an algorithm that computes the shortest paths from **one** node to all nodes, negative edges **allowed**.
+- Slower than Dijkstra's algorithm.
+- Time Complexity:
+  - Best: `O(E)`
+  - Worst: `O(VE)`
+
+## Prim's Algorithm
+
+![Alt text](/img/prim.gif "Prim's Algorithm")
+
+- Prim's Algorithm is a greedy algorithm that finds a minimum spanning tree for a weighted undirected graph. In other words, Prim's find a subset of edges that forms a tree that includes every node in the graph.
+- Time Complexity: `O(V^2)`
+
+## Floyd-Warshall Algorithm
+
+- Floyd-Warshall Algorithm is an algorithm for finding the shortest paths between **all** pairs of vertices, negative edges **allowed**.
+- Time complexity: `O(V^3)`
+
+## Kruskal's Algorithm
+
+![Alt text](/img/kruskal.gif "Kruskal's Algorithm")
+
+- Kruskal's Algorithm is also a greedy algorithm that finds a minimum spanning tree in a graph. However, in Kruskal's, the graph does not have to be connected
+- Time Complexity: `O(ElogV)`
 
 # References
 
-- [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://www.youtube.com/watch?v=RBSGKlAvoiM)
-- [MIT Introduction to Algorithms](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=1)
+- `[Video]` [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://www.youtube.com/watch?v=RBSGKlAvoiM)
+
+- `[Video Playlist]` [MIT Introduction to Algorithms](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=1)
+
+- `[Website]` [Sorting Algorithms Complexity & Visualization](http://www-scf.usc.edu/~zhan468/public/Notes/sorting.html)
+- `[Website]` [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en)
