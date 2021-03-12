@@ -6,7 +6,7 @@ var Set = function() {
 
 var setPrototype = {};
 
-// O(1)
+// O(n)
 setPrototype.add = function(item) {
   if (!this.storage.includes(item)) {
     this.storage.push(item);
